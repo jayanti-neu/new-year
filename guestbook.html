@@ -42,20 +42,63 @@
         <div class="left">
           <h3>Save the date</h3>
           <h3>July 23, 20XX</h3>
-                <h3>Wednesday</h3> 
+          <h3>Wednesday</h3>
         </div>
 
         <div class="center">
           <h1>Jayanti & <br /><span>Michael</span></h1>
-          <div class="button"><h4><a href="./about.html">Learn More</a>   </h4></div> 
+          <form id="guestbook-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+            <br />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <br />
+            <button type="submit" class="button"><h4>Submit</h4></button>
+          </form>
+          <h2>Messages</h2>
+          <div id="messages"></div>
         </div>
 
         <div class="right">
-           <h3>2.30 PM - 1.00 PM</h3>
-                <h3>1450 Maryland Highway Oakland, MD</h3> 
+          <h3>2.30 PM - 1.00 PM</h3>
+          <h3>1450 Maryland Highway Oakland, MD</h3>
         </div>
       </div>
     </div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("guestbook-form");
+        const messagesDiv = document.getElementById("messages");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document.getElementById("name").value;
+          const message = document.getElementById("message").value;
+
+          const messages =
+            JSON.parse(localStorage.getItem("guestbookMessages")) || [];
+          messages.push({ name, message });
+          localStorage.setItem("guestbookMessages", JSON.stringify(messages));
+
+          displayMessages();
+          form.reset();
+        });
+
+        function displayMessages() {
+          const messages =
+            JSON.parse(localStorage.getItem("guestbookMessages")) || [];
+          messagesDiv.innerHTML = "";
+          messages.forEach((msg) => {
+            const newMessage = document.createElement("div");
+            newMessage.textContent = `${msg.name}: ${msg.message}`;
+            messagesDiv.appendChild(newMessage);
+          });
+        }
+
+        displayMessages();
+      });
+    </script>
   </body>
 </html>
