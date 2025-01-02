@@ -1,115 +1,238 @@
 * {
-    margin: 0;
-    color: #cad2cf;
-    text-shadow: 0 0 10px black;    
+  margin: 0;
+  color: #cad2cf;
+  text-shadow: 0 0 10px black;
 }
 html {
-    height: 100%;
-    background: linear-gradient(144deg, #859362, #272717);
+  height: 100%;
+  background: linear-gradient(144deg, #859362, #272717);
 }
 body {
-    height:100%;
+  height: 100%;
 }
 .bg {
-    background: radial-gradient(rgb(55 55 55 / 33%), #00000024), url(./img/engagement-cropped-less.jpg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-    background-size: 100vw;
-    height: 100%;
+  background: radial-gradient(rgb(55 55 55 / 33%), #00000024),
+    url(./img/engagement-cropped-less.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  background-size: 100vw;
+  height: 100%;
 }
 .title {
-    padding-top: 5vh;
-    text-align: center;
-    letter-spacing: .2em;
-    font-size: 1em;
+  padding-top: 5vh;
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-size: 1em;
 }
 
-.content  {
-    margin: 3em 1em;
-    display: flex;
-    justify-content: space-around;
+.content {
+  margin: 3em 1em;
+  display: flex;
+  justify-content: space-around;
 }
 
 h1 {
-    font-size: 3.5em;
-    font-family: "Linden Hill", serif;
-    font-weight: 400;
-    margin-top: -0.15em;
-    line-height: .9;
+  font-size: 3.5em;
+  font-family: "Linden Hill", serif;
+  font-weight: 400;
+  margin-top: -0.15em;
+  line-height: 0.9;
 }
 h1 span {
-    font-family: "Source Serif 4", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: italic;
-    font-size:1em;
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1em;
 }
 
 h3 {
-    font-family: "Source Sans 3", serif;
-    font-optical-sizing: auto;
-    font-size: .9em;
-    font-style: normal;
-    writing-mode: tb-rl;
-    padding-bottom: 5em;
+  font-family: "Source Sans 3", serif;
+  font-optical-sizing: auto;
+  font-size: 0.9em;
+  font-style: normal;
+  writing-mode: tb-rl;
+  padding-bottom: 5em;
 }
 .button {
-    margin-top: 1.5em;
+  margin-top: 1.5em;
 }
-.button h4{
-    font-family: "Source Sans 3", serif;
-    line-height:2;
-    width: 7em;
-    margin: auto;
-    border: 2px inset olive;
-    border-top-right-radius: 2em;
-    border-bottom-left-radius: 2em;
-    background: #0000006c;
-    float: right;
-    transition: all .5s;
-    box-shadow: 0 0 20px black;
+.button h4 {
+  font-family: "Source Sans 3", serif;
+  line-height: 2;
+  width: 7em;
+  margin: auto;
+  border: 2px inset olive;
+  border-top-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+  background: #0000006c;
+  float: right;
+  transition: all 0.5s;
+  box-shadow: 0 0 20px black;
 }
 .button:hover h4 {
-    cursor: pointer;
-    border-radius: 0;
-    border-top-left-radius: 2em;
-    border-bottom-right-radius: 2em;
-    background: #00000066;
-    transform: scale(1.2);
+  cursor: pointer;
+  border-radius: 0;
+  border-top-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  background: #00000066;
+  transform: scale(1.2);
 }
 .button:active h4 {
-    transform: scale(1.1);
-    border-radius: 2em;
-    border: 2px inset hotpink;
-    color: #fff;
+  transform: scale(1.1);
+  border-radius: 2em;
+  border: 2px inset hotpink;
+  color: #fff;
 }
 h4 {
-    text-align: center;;
+  text-align: center;
 }
 
-@media (min-width: 768px){
+form#guestbook-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
 
-    body {
-        height: 100vh;
-    }
-  .bg{
+form#guestbook-form label {
+  margin-top: 1em;
+  font-family: "Source Sans 3", serif;
+  font-size: 1em;
+}
+
+form#guestbook-form input[type="text"],
+form#guestbook-form textarea {
+  width: 80%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Source Sans 3", serif;
+  font-size: 1em;
+  text-shadow: none;
+  color: #333;
+}
+
+form#guestbook-form button[type="submit"] {
+  background: none;
+  border: none;
+}
+
+#messages {
+  text-shadow: none;
+  color: #333;
+  margin-top: 2em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#messages div {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+  font-family: "Source Sans 3", serif;
+  font-size: 1em;
+  text-shadow: none;
+  color: #333;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 163, 125, 0.603);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+#menu-toggle:checked + .menu-icon + .menu {
+  transform: scale(1);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu li {
+  padding: 20px;
+  font-size: 24px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(241, 217, 217);
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: rgb(255, 0, 242);
+}
+
+.menu::before {
+  content: '❤️';
+  font-size: 55vh;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+  .bg {
     background-size: 100vh;
   }
-    .content {
-        width: 50%;
-        margin: 7% 25%;
-    }
+  .content {
+    width: 50%;
+    margin: 7% 25%;
+  }
 }
 
 @media (orientation: landscape) {
-    html {
-        height: 100vh;
-    }
-    body {
-        height: 100%;
-    }
-  .bg{
+  html {
+    height: 100vh;
+  }
+  body {
+    height: 100%;
+  }
+  .bg {
     background-size: 100vh;
   }
 }
