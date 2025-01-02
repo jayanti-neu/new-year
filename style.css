@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    color: #cad2cf;
+    text-shadow: 0 0 10px black;    
+}
+html {
+
+    background: linear-gradient(144deg, #859362, #272717);
+}
+body {
+    height:100%;
+}
+.bg {
+    background: radial-gradient(rgb(55 55 55 / 33%), #00000024), url(./img/engagement-cropped-less.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    background-size: 100vw;
+    height: 100%;
+}
+.title {
+    padding-top: 5vh;
+    text-align: center;
+    letter-spacing: .2em;
+    font-size: 1em;
+}
+
+.content  {
+    margin: 3em 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-family: "Linden Hill", serif;
+    font-weight: 400;
+    margin-top: -0.15em;
+    line-height: .9;
+}
+h1 span {
+    font-family: "Source Serif 4", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+    font-size:1em;
+}
+
+h3 {
+    font-family: "Source Sans 3", serif;
+    font-optical-sizing: auto;
+    font-size: .9em;
+    font-style: normal;
+    writing-mode: tb-rl;
+    padding-bottom: 5em;
+}
+.button {
+    margin-top: 1.5em;
+}
+.button h4{
+    line-height:2;
+    width: 7em;
+    margin: auto;
+    border: 2px inset olive;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    background: #0000006c;
+    float: right;
+    transition: all .5s;
+    box-shadow: 0 0 20px black;
+}
+.button:hover h4 {
+    cursor: pointer;
+    border-radius: 0;
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    background: #00000066;
+    transform: scale(1.2);
+}
+.button:active h4 {
+    transform: scale(1.1);
+    border-radius: 2em;
+    border: 2px inset hotpink;
+    color: #fff;
+}
+h4 {
+    text-align: center;;
+}
+
+@media (width > 768px) and (pointer: fine) {
+
+    body {
+        height: 100vh;
+    }
+  .bg{
+    background-size: 100vh;
+  }
+    .content {
+        width: 50%;
+        margin: 7% 25%;
+    }
+}
