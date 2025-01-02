@@ -10,6 +10,9 @@ html {
 body {
     height:100%;
 }
+a {
+    text-decoration: none;
+}
 .bg {
     background: radial-gradient(rgb(55 55 55 / 33%), #00000024), url(./img/engagement-cropped-less.jpg);
     background-repeat: no-repeat;
