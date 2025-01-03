@@ -13,9 +13,16 @@ body {
 a {
     text-decoration: none;
 }
-.bg {
+
+.default {
   background: radial-gradient(rgb(55 55 55 / 33%), #00000024),
-    url(./img/engagement-cropped-less.jpg);
+  url(./img/engagement-cropped-less.jpg);
+}
+.about {
+    background: radial-gradient(rgb(55 55 55 / 33%), #00000024),
+    url(./img/invite.jpg);
+}
+.bg {
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
