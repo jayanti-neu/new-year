@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jayanti & Michael are getting married!!</title>
+    <title>Jayanti & Michael are Getting Married!!</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,41 +21,20 @@
       href="https://fonts.googleapis.com/css2?family=Linden+Hill:ital@1&display=swap"
       rel="stylesheet"
     />
+    <script src="template.js" defer></script>
+    <script src="menu.js" defer></script>
   </head>
   <body>
-    <div class="hamburger-menu">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="guestbook.html">Guestbook</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="bg">
-      <h2 class="title">We're Engaged!!!</h2>
-
-      <div class="content">
-        <div class="left">
-          <h3>Save the date</h3>
-          <h3>July 23, 20XX</h3>
-                <h3>Wednesday</h3> 
-        </div>
-
-        <div class="center">
-          <h1>Jayanti & <br /><span>Michael</span></h1>
-          <div class="button"><h4><a href="./about.html">Learn More</a>   </h4></div> 
-        </div>
-
-        <div class="right">
-           <h3>2.30 PM - 1.00 PM</h3>
-                <h3>1450 Maryland Highway Oakland, MD</h3> 
-        </div>
-      </div>
-    </div>
+    <page-template>
+        <!-- <div slot="title"> </div> -->
+        <!-- <div slot="left-content"> </div>-->
+          <div slot="center-content">
+            <h1>Jayanti & <br /><span>Michael</span></h1>
+            <div class="button"><h4><a href="./about.html">Learn More</a></h4></div>
+            </div>
+            <!-- <div slot="right-content"> </div> -->
+    </page-template>
+ 
 
   </body>
 </html>
