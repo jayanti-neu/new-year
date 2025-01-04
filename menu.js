@@ -15,7 +15,8 @@ class HamburgerMenu extends HTMLElement {
 	}
 
 	connectedCallback() {
-		this.shadowRoot.innerHTML = `
+
+this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="menu.css">
 			<div class="hamburger-menu">
 				<input type="checkbox" id="menu-toggle">

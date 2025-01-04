@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift Registry</title>
-</head>
-<script src="template.js" defer></script>
-<script src="menu.js" defer></script>
 
-<link rel="stylesheet" href="./style.css" />
-<body>   
-                <page-template>
-                    <div slot="title">Gift Registry</div>
-                    <!-- <div slot="left-content"> </div> -->
-                      <div slot="center-content">
-                        <h1>Your presence is more than enough</h1>
-                   <h2 class="inv-date">But if you would like to get us a gift...</h2>
-                        </div>
-                        <!-- <div slot="right-content"></div> -->
-                </page-template>
-     
-        
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Registry</title>
+  <script src="template.js" defer></script>
+  <script src="menu.js" defer></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <template id="registry-template">
+    <page-template>
+      <div slot="title">Gift Registry</div>
+      <!-- <div slot="left-content"> </div> -->
+      <div slot="center-content">
+        <h1>Your presence is more than enough</h1>
+        <h2 class="inv-date">But if you would like to get us a gift...</h2>
+      </div>
+      <!-- <div slot="right-content"></div> -->
+    </page-template>
+  </template>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const template = document.getElementById('registry-template');
+      const clone = document.importNode(template.content, true);
+      document.body.appendChild(clone);
+    });
+  </script>
 </body>
+
 </html>

@@ -1,83 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign the Guestbook!</title>
-    <script src="menu.js" defer></script>
-    <script src="template.js" defer></script>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Linden+Hill:ital@1&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Source+Serif+4"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Linden+Hill:ital@1&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-   <page-template>
-        <div slot="title">Guestbook</div>
-        <!-- <div slot="left-content">
-          </div> -->
-          <div slot="center-content">
-            <h1>Jayanti & <br /><span>Michael</span></h1>
-            <form id="guestbook-form">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required />
-              <br />
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" required></textarea>
-              <br />
-              <button type="submit" class="button"><h4>Submit</h4></button>
-            </form>
-            <h2>Messages</h2>
-            <div id="messages"></div>
-            </div>
-            <!-- <div slot="right-content"></div> -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign the Guestbook!</title>
+  <script src="menu.js" defer></script>
+  <script src="template.js" defer></script>
+  <script src="guestbook-form.js" defer></script>
+  <script src="guestbook-messages.js" defer></script>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Linden+Hill:ital@1&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4" />
+</head>
+
+<body>
+  <template id="guestbook-template">
+    <page-template>
+      <div slot="title">Guestbook</div>
+      <div slot="center-content">
+        <h1>Jayanti & <br /><span>Michael</span></h1>
+        <guestbook-form></guestbook-form>
+        <guestbook-messages></guestbook-messages>
+      </div>
     </page-template>
+  </template>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("guestbook-form");
-        const messagesDiv = document.getElementById("messages");
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const template = document.getElementById('guestbook-template');
+      const clone = document.importNode(template.content, true);
+      document.body.appendChild(clone);
+    });
+  </script>
+</body>
 
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-          const name = document.getElementById("name").value;
-          const message = document.getElementById("message").value;
-
-          const messages =
-            JSON.parse(localStorage.getItem("guestbookMessages")) || [];
-          messages.push({ name, message });
-          localStorage.setItem("guestbookMessages", JSON.stringify(messages));
-
-          displayMessages();
-          form.reset();
-        });
-
-        function displayMessages() {
-          const messages =
-            JSON.parse(localStorage.getItem("guestbookMessages")) || [];
-          messagesDiv.innerHTML = "";
-          messages.forEach((msg) => {
-            const newMessage = document.createElement("div");
-            newMessage.textContent = `${msg.name}: ${msg.message}`;
-            messagesDiv.appendChild(newMessage);
-          });
-        }
-
-        displayMessages();
-      });
-    </script>
-  </body>
 </html>

@@ -1,69 +1,69 @@
 .hamburger-menu {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-  }
-  
-  .menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-    display: block;
-  }
-  
-  #menu-toggle {
-    display: none;
-  }
-  
-  .menu {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(88, 163, 125, 0.603);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transform: scale(0);
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  #menu-toggle:checked + .menu-icon + .menu {
-    transform: scale(1);
-  }
-  
-  .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-  
-  .menu li {
-    padding: 20px;
-    font-size: 24px;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: rgb(241, 217, 217);
-    display: block;
-    transition: color 0.3s ease;
-  }
-  
-  .menu a:hover {
-    color: rgb(255, 0, 242);
-  }
-  
-  .menu::before {
-    content: '❤️';
-    font-size: 55vh;
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.5;
-    z-index: -1;
-  }
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 163, 125, 0.603);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+#menu-toggle:checked+.menu-icon+.menu {
+  transform: scale(1);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu li {
+  padding: 20px;
+  font-size: 24px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(241, 217, 217);
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: rgb(255, 0, 242);
+}
+
+.menu::before {
+  content: '❤️';
+  font-size: 55vh;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  z-index: -1;
+}

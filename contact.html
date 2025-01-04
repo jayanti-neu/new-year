@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <script src="template.js" defer></script>
+    <script src="menu.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
 </head>
-<script src="template.js" defer></script>
-<script src="menu.js" defer></script>
+<body>
+    <template id="contact-template">
+        <page-template>
+            <div slot="title">Contact Us</div>
+            <div slot="center-content">
+                <h4><a href="mailto:mikenichols410@gmail.com">mikenichols410 at gmail dot com</a></h4>
+            </div>
+        </page-template>
+    </template>
 
-<link rel="stylesheet" href="./style.css" />
-<body>   
-                <page-template>
-                    <div slot="title">Contact Us</div>
-                    <!-- <div slot="left-content"> </div> -->
-                      <div slot="center-content">
-                        <h4><a href="mailto:mikenichols410@gmail.com">mikenichols410 at gmail dot com</a></h4>
-                        </div>
-                        <!-- <div slot="right-content"></div> -->
-                </page-template>    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const template = document.getElementById('contact-template');
+            const clone = document.importNode(template.content, true);
+            document.body.appendChild(clone);
+        });
+    </script>
 </body>
 </html>

@@ -25,16 +25,24 @@
     <script src="menu.js" defer></script>
   </head>
   <body>
-    <page-template>
+    <template id="index-template">
+      <page-template>
         <!-- <div slot="title"> </div> -->
         <!-- <div slot="left-content"> </div>-->
-          <div slot="center-content">
-            <h1>Jayanti & <br /><span>Michael</span></h1>
-            <div class="button"><h4><a href="./about.html">Learn More</a></h4></div>
-            </div>
-            <!-- <div slot="right-content"> </div> -->
-    </page-template>
- 
+        <div slot="center-content">
+          <h1>Jayanti & <br /><span>Michael</span></h1>
+          <div class="button"><h4><a href="./about.html">Learn More</a></h4></div>
+        </div>
+        <!-- <div slot="right-content"> </div> -->
+      </page-template>
+    </template>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const template = document.getElementById('index-template');
+        const clone = document.importNode(template.content, true);
+        document.body.appendChild(clone);
+      });
+    </script>
   </body>
 </html>
