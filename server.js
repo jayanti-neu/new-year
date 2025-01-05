@@ -43,18 +43,18 @@ const weddingDetailsCollection = db.collection('weddingDetailsCollection');
 
 
 // GET /api/details: Get the wedding details object
-// app.get('/api/details', async (req, res) => {
-//     try {
-//         const doc = await weddingDetailsCollection.doc('details').get();
-//         if (!doc.exists) return res.status(404).send('Details not found');
-//         const data = doc.data();
-//         data.date = data.date.toDate();
-//         res.json(doc.data());
-//     } catch (error) {
-//         console.error('Error getting wedding details:', error);
-//         res.status(500).send('Error getting wedding details');
-//     }
-// });
+app.get('/api/details', async (req, res) => {
+    try {
+        const doc = await weddingDetailsCollection.doc('details').get();
+        if (!doc.exists) return res.status(404).send('Details not found');
+        const data = doc.data();
+        data.date = data.date.toDate();
+        res.json(doc.data());
+    } catch (error) {
+        console.error('Error getting wedding details:', error);
+        res.status(500).send('Error getting wedding details');
+    }
+});
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home', bgClass: 'default' });
