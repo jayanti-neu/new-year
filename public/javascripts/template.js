@@ -40,10 +40,11 @@ class PageTemplate extends HTMLElement {
         } catch (error) {
             this.details = {
                 heading: "We're Engaged!!!",
-                message: 'To Be Announced',
+                message: 'Save the Date',
                 date: 'To Be Announced',
                 location: 'To Be Announced'
             }
+            this.dayOfWeek = 'Day TBD';
             this.date = 'Date TBD';
             this.startTime = 'Start Time TBD';
             this.endTime = 'End Time TBD';
