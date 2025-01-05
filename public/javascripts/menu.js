@@ -1,9 +1,9 @@
 const menuItems = [
-	{ href: "index.html", text: "Home" },
-	{ href: "about.html", text: "About" },
-	{ href: "contact.html", text: "Contact" },
-	{ href: "guestbook.html", text: "Guestbook" },
-	{ href: "registry.html", text: "Registry" }
+	{ href: "/", text: "Home" },
+	{ href: "about", text: "About" },
+	{ href: "photos", text: "Photo Gallery" },
+	{ href: "guestbook", text: "Guestbook" },
+	{ href: "registry", text: "Registry" }
 ];
 
 const menuHTML = menuItems.map(item => `<li><a href="${item.href}">${item.text}</a></li>`).join('');
@@ -15,9 +15,8 @@ class HamburgerMenu extends HTMLElement {
 	}
 
 	connectedCallback() {
-
-this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="menu.css">
+		this.shadowRoot.innerHTML = `
+			<link rel="stylesheet" href="/stylesheets/menu.css">
 			<div class="hamburger-menu">
 				<input type="checkbox" id="menu-toggle">
 				<label for="menu-toggle" class="menu-icon">&#9776;</label>

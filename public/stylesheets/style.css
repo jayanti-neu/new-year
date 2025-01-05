@@ -16,11 +16,11 @@ a {
 
 .default {
   background: radial-gradient(rgb(55 55 55 / 33%), #00000024),
-  url(./img/engagement-cropped-less.jpg);
+  url(../img/engagement-cropped-less.jpg);
 }
 .about {
     background: radial-gradient(rgb(55 55 55 / 33%), #00000024),
-    url(./img/invite.jpg);
+    url(../img/invite.jpg);
 }
 .bg {
   background-repeat: no-repeat;
@@ -64,6 +64,14 @@ h3 {
   font-style: normal;
   writing-mode: tb-rl;
   padding-bottom: 5em;
+}
+
+p {
+  font-family: "Source Sans 3", serif;
+  font-size: 1.2em;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 1em;
 }
 .button {
   margin-top: 1.5em;
