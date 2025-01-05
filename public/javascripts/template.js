@@ -42,6 +42,7 @@ class PageTemplate extends HTMLElement {
                 heading: "We're Engaged!!!",
                 message: 'To Be Announced',
                 date: 'To Be Announced',
+                location: 'To Be Announced'
             }
             this.date = 'Date TBD';
             this.startTime = 'Start Time TBD';
