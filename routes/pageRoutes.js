@@ -16,7 +16,6 @@ router.get('/guestbook', (req, res) => {
     db.collection('guestBookEntries').get()
         .then(snapshot => {
             const guestBookEntries = snapshot.docs.map(doc => doc.data());
-            console.log(guestBookEntries);
             res.render('guestbook', { title: "Guest Book", guestBookEntries, bgClass: 'about' });
         })
         .catch(error => {
