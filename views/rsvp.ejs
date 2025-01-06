@@ -1,0 +1,27 @@
+<% layout('layout') %>
+    <h1>You're Invited !!!</h1>
+    <h2 class="inv-date">Let us know if you can make it</h2>
+    <form action="/api/rsvp" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" min="0" required>
+        </div>
+        <div>
+            <label>Will you be attending?</label>
+            <input type="radio" id="yes" name="attending" value="yes" required>
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="attending" value="no" required>
+            <label for="no">No</label>
+        </div>
+        <div>
+            <button type="submit">RSVP</button>
+        </div>
+    </form>

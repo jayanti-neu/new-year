@@ -28,7 +28,7 @@ router.get('/registry', (req, res) => {
 });
 
 router.get('/rsvp', (req, res) => {
-    res.render('rsvp', { title: 'RSVP', bgClass: '' });
+    res.render('rsvp', { title: 'RSVP', bgClass: 'about' });
 });
 
 router.get('/photos', (req, res) => {
@@ -36,7 +36,7 @@ router.get('/photos', (req, res) => {
 });
 
 router.get('/about', (req, res) => {
-    res.render('about', { title: 'About', bgClass: 'about' });
+    res.render('about', { title: 'About', bgClass: '' });
 });
 
 module.exports = router;
