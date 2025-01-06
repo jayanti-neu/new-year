@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../firebase').db;
+const fs = require('fs');
+const path = require('path');
 
 router.get('/', (req, res) => {
     res.render('index', { title: 'Home', bgClass: 'default' });
@@ -32,7 +34,9 @@ router.get('/rsvp', (req, res) => {
 });
 
 router.get('/photos', (req, res) => {
-    res.render('photos', { title: 'Photos', bgClass: '' });
+    const imgDir = path.join(__dirname, '../public/img');
+    const images = fs.readdirSync(imgDir);
+    res.render('photos', { title: "Photo Gallery", images: images, bgClass: 'default' });
 });
 
 router.get('/about', (req, res) => {

@@ -1,3 +1,19 @@
 <% layout('layout') %>
-<h1>Photo Gallery</h1>
-<p>Under construction</p>
+    <h1>Photo Gallery</h1>
+    <div class="gallery">
+        <% images.forEach(function(image) { %>
+            <div class="photo">
+                <img src="/img/<%= image %>" alt="Photo">
+            </div>
+            <% }); %>
+    </div>
+    <!-- Modal Structure -->
+    <div id="photo-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <script src="./javascripts/modal.js"></script>>
+
+    </script>
